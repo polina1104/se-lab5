@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+        }
+        div{
+            border: 2px solid rgb(102, 2, 77);
+            display: flex;
+            width: 300px;
+            height: 360px;
+            margin: auto;
+            overflow: hidden;
+        }
+        td div{
+            border: none;
+            display: flex;
+            width: 90%;
+            height: 90%;
+            margin: auto;
+        }
+        table{
+            width: 300px;
+            height: 360px;
+            border-spacing: 10px;
+            background-color: #ff00b3;
+
+        }
+        td{
+            font-size: 30px;
+            font-weight: 800;
+            text-align: center;
+            color:rgb(126, 1, 199);
+            background-color: #5cddee;
+            margin: 5px;
+            border: 1px solid rgb(249, 253, 7);
+            box-shadow: yellow;
+        }
+        .green{
+            background-color: rgb(7, 241, 112);
+        }
+        .blue{
+            background-color: rgb(26, 106, 224);
+        }
+        .head{
+            display: flex;
+            width: 300px;
+            height: 37px;
+            font-size: 30px;
+            font-weight: 800;
+            border-bottom: 0px;
+            background-color: #696666;
+            margin-top: 50px;
+        }
+        .span{
+            display: flex;
+            margin-left: 270px;
+            border: 0px;
+            background-color: #eb1cd9;
+        }
+        input{
+            display: block;
+            width: 200%;
+            height: 100%;
+            background-color:  #b113b1;
+            border: 0px solid yellow;
+            color: rgb(46, 252, 200);
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="head"><form><input id="text" type="text" value="" readonly></form></div>
+<div class="body">
+    <table>
+        <tr> <td colspan="3" class="blue"  onclick="C()">c</td> <td><div onclick="Vvod('/')">/</div></td> </tr>
+        <tr> <td><div onclick="Vvod('7')">7</div></td> <td><div onclick="Vvod('8')">8</div></td>
+            <td><div  onclick="Vvod('9')">9</div></td> <td><div  onclick="Vvod('*')">*</div></td> </tr>
+        <tr> <td><div onclick="Vvod('4')">4</div></td> <td><div onclick="Vvod('5')">5</div></td>
+            <td><div  onclick="Vvod('6')">6</div></td> <td><div  onclick="Vvod('-')">-</div></td> </tr>
+        <tr> <td><div onclick="Vvod('1')">1</div></td> <td><div onclick="Vvod('2')">2</div></td>
+            <td><div  onclick="Vvod('3')">3</div></td> <td><div  onclick="Vvod('+')">+</div></td> </tr>
+        <tr> <td colspan="3"  onclick="Vvod('0')">0</td> <td class="green"  onclick="Q()">=</td> </tr>
+    </table>
+</div>
+
+<script>
+    var a = 0, operation = 0;
+    var text = document.getElementById("text");
+    function Vvod (n){
+        if ((n == "-" || n == "/" || n == "*" || n == "+") && (!operation)){
+            text.value = text.value + n;
+            console.log(text.value);
+            a = n;
+            ++operation;
+        }
+        else{
+            if (!(n == "-" || n == "/" || n == "*" || n == "+")){
+                text.value = text.value + n;
+                console.log(text.value);
+                a = n;
+            }
+        }
+    }
+    function C (){
+        text.value = "";
+        operation = 0;
+    }
+    function Q (){
+        console.log(text[0]);
+        operation = 0;
+        if (a == 0) text.value = "ERROR";
+        else {
+            if (text.value[0] == 0 || text.value[0] == "/" || text.value[0] == "*" || text.value[0] == "+" || text.value[0] == "-")
+                text.value = "ERROR";
+            else {
+                text.value = eval(text.value);
+                console.log(text.value);
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

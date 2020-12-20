@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2</title>
+</head>
+<body>
+    <div>
+        <input type="button" name="r" onclick="rand()" value="Кнопка">
+        <input type="text" id="randomnumber">
+    </div>
+    <script>
+        function rand() {
+            var text=document.getElementById('randomnumber');
+            text.value=Math.round(Math.random()*(10-1)+1);
+        }
+    </script>
+</body>
+</html>
