@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+.container {
+    border: 1px solid black;
+    margin: 50px;
+    padding: 25px;
+    margin-top: 200px;
+}
+.step-do {
+    font-size: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+.clean {
+    cursor: pointer;
+}
+.clean:hover {
+    color: darkgrey;
+}
+.game-grid {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /*разделяет на 3 равные части*/
+    grid-gap: 1px;
+    margin-top: 15px;
+    background: black;
+}
+.game-cell {
+    height: 90px;
+    width: 90px;
+    background: white;
+    cursor: pointer;
+    font-size: 60px;
+    text-align: center;
+    padding-top: 8px;
+}
