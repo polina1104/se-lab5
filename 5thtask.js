@@ -19,7 +19,7 @@ equalButton.onclick = function() {
     }
 };
 function checkOperations(num){
-    if ( (document.form.textview.value.indexOf('1') !== -1            /*если найден элемент и не найден знак операции, то прибавляется знак опреации*/
+    if ( (document.form.textview.value.indexOf('1') !== -1          
         || document.form.textview.value.indexOf('2') !== -1            /*знаки пишутся один раз при учете того, что в строке есть хотя бы одна цифра*/
         || document.form.textview.value.indexOf('3') !== -1
         || document.form.textview.value.indexOf('4') !== -1
